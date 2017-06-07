@@ -58,7 +58,7 @@ var gulpSass = function gulpSass(options, sync) {
     opts.includePaths.unshift(path.dirname(file.path));
 
     // Generate Source Maps if plugin source-map present
-    if (file.sourceMap) {
+    if (opts.sourceMap !== false && file.sourceMap) {
       opts.sourceMap = file.path;
       opts.omitSourceMapUrl = true;
       opts.sourceMapContents = true;
